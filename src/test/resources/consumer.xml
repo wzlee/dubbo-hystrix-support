@@ -12,7 +12,7 @@
 	<dubbo:application name="consumer-of-helloworld-app" />
 
 	<dubbo:consumer>
-		<dubbo:parameter key="ThreadPoolCoreSize" value="3" />
+		<dubbo:parameter key="ThreadPoolCoreSize" value="30" />
 	</dubbo:consumer>
 
 	<!-- 使用multicast广播注册中心暴露服务地址 -->

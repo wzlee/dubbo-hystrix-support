@@ -21,8 +21,7 @@ public class DubboHystrixCommand extends HystrixCommand<Result> {
     
     public DubboHystrixCommand(Invoker<?> invoker,Invocation invocation){
         super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey(invoker.getInterface().getName()))
-                    .andCommandKey(HystrixCommandKey.Factory.asKey(String.format("%s_%d", invocation.getMethodName(),
-                                                                                 invocation.getArguments() == null ? 0 : invocation.getArguments().length)))
+                    .andCommandKey(HystrixCommandKey.Factory.asKey(String.format("%s_%d", invocation.getMethodName(), invocation.getArguments() == null ? 0 : invocation.getArguments().length)))
               .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
                                             .withCircuitBreakerRequestVolumeThreshold(20)//10秒钟内至少19此请求失败，熔断器才发挥起作用
                                             .withCircuitBreakerSleepWindowInMilliseconds(30000)//熔断器中断请求30秒后会进入半打开状态,放部分流量过去重试
@@ -56,6 +55,7 @@ public class DubboHystrixCommand extends HystrixCommand<Result> {
 
     @Override
     protected Result run() throws Exception {
+    	System.out.println(">>>>>>>>>>>>>>>>>>>>invoke method...");
         return invoker.invoke(invocation);
     }
 }
