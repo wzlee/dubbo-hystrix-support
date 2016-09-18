@@ -1,4 +1,4 @@
-package com.netease.hystrix.dubbo.rpc.filter;
+package com.leoops.hystrix.dubbo.rpc.filter;
 
 import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.common.extension.Activate;

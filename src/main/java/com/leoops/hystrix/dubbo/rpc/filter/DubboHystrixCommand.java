@@ -1,4 +1,4 @@
-package com.netease.hystrix.dubbo.rpc.filter;
+package com.leoops.hystrix.dubbo.rpc.filter;
 
 import org.apache.log4j.Logger;
 
